@@ -1,29 +1,19 @@
-```yaml
-name: Executar Robô de Ofertas
+name: 'Executar Robo de Ofertas'
 
 on:
-  # Permite rodar manualmente pelo botão "Run workflow"
   workflow_dispatch:
-  # Agendamento automático (a cada 10 minutos)
   schedule:
     - cron: '*/10 * * * *'
 
 jobs:
   run-robot:
     runs-on: ubuntu-latest
-    
     steps:
-      # 1. Baixa o código do repositório
-      - name: Checkout do código
+      - name: Checkout do codigo
         uses: actions/checkout@v4
-
-      # 2. Configura o Python
       - name: Configurar Python
         uses: actions/setup-python@v5
         with:
           python-version: '3.12'
-
-      # 3. Executa o seu robô
       - name: Rodar robo.py
         run: python robo.py
-```
