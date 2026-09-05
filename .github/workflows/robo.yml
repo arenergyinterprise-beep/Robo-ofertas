@@ -1,19 +1,7 @@
-name: 'Executar Robo de Ofertas'
-
-on:
-  workflow_dispatch:
-  schedule:
-    - cron: '*/10 * * * *'
-
+name: Teste
+on: workflow_dispatch
 jobs:
-  run-robot:
+  teste:
     runs-on: ubuntu-latest
     steps:
-      - name: Checkout do codigo
-        uses: actions/checkout@v4
-      - name: Configurar Python
-        uses: actions/setup-python@v5
-        with:
-          python-version: '3.12'
-      - name: Rodar robo.py
-        run: python robo.py
+      - run: echo "Olá GitHub!"
